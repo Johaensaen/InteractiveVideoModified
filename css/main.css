@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+/***
+BASE STYLES 
+***/
+
+body {
+	font: normal 1rem "Lato", Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	color: #070B2C;
+	background: #e2e2e2; 
+}
+
+a {
+	text-decoration: none;
+	color: yellow;
+	transition: color .4s;
+}
+
+a:hover {
+	color: #2391D3;
+}
+
+
+/***
+LAYOUT CONTAINERS
+***/
+
+.main-wrap {
+	width: 100%;
+}
+
+.main-header,
+.video-wrap {
+	display: flex;
+	justify-content: center;
+}
+
+
+
+.main-header {
+	color:#B5BBF4;
+	background: #070B2C;
+	padding: 1em;
+	border-bottom: 1px solid #B5BBF4;
+	flex-direction: column;
+	align-items: center;
+}
+
+.name {
+	margin: 0;
+	font-size: 1.4em;
+	font-weight: normal;
+}
+
+.info {
+	font-size: .9rem;
+}
+
+.video-section {
+	width: 100%;
+}
+
+/* .grid-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	/* background-color: #2196F3; */
+	/* padding: 10px; 
+  }
+  .grid-item {
+	background-color: rgba(255, 255, 255, 0.8);
+	/* border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 20px;
+	font-size: 18px;
+	text-align: left;
+  } */
+
+
+.video-wrap {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto 3em;
+}
+	
+.caption-section {
+	width: 90%;
+	margin: 0 auto 2em;
+}
+
+.caption-instruction {
+	text-align: center;
+	font-weight: bold;
+	color: #070B2C;
+	margin: 1em auto 0;
+}
+
+.caption-section p {
+	letter-spacing: 0.1em;
+}
+
+.no-highlight { /* applied to have transition effect on JS highlight class */
+	transition: all 1.5s ease-in-out;
+}
+
+.highlight {
+	color: #070B2C;
+	background: #B5BBF4;
+	padding: 0.3em;
+	border-radius: 8px;
+	transition: all 0.5s ease-in-out;
+}
+
+.main-footer {
+	/* background: #7b85e1; */
+	color: #B5BBF4;
+	padding: 1em;
+	text-align: center;
+}
+
+
+/*** Video Components ***/
+
+
+
+.mejs__inner .mejs__controls {
+  background: #070B2C;
+}
+
+/*video,
+#my_video,
+.mejs__container,
+.mejs__container-keyboard-inactive,
+.mejs__video,
+.mejs__player,
+.mejs__overlay,
+.mejs__overlay-play {
+	border-radius: 8px;
+}*/
+
+
+.mejs__controls .mejs__button button {
+	outline: none;
+}
+
+.mejs__time-current {
+  background: #B5BBF4; 
+}
+
+.mejs__controls {
+  margin: 0;
+  padding: 5px 7px;
+  bottom: -45px;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  z-index: 1;
+  /*border-radius: 8px; */
+}
+
+.mejs__container {
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #34495e; 
+}
+
+
+/*#2391D3*/
+
+/*** MEDIA QUERIES ***/
+
+@media only screen and (min-width: 768px) {
+
+	.info {
+		width: 80%;
+	}
+
+	.video-wrap {
+		margin-top: 3em;
+		margin-bottom: 3.5em;
+	}
+
+	.caption-section {
+		width: 80%;
+	}
+}

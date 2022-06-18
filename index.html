@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Interactive Video Player</title>
+		<link rel="icon" type="image/x-icon" href="/Users/johaensaen/Downloads/interactive-video-player-master/img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/normalize.css">
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelementplayer.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+
+		<main class="main-wrap">
+
+			<header class="main-header">
+
+					<h1 class="name">Interactive Video Player</h1>
+					<!-- <p class="info">Interactive video player using JavaScript, the HTML5 Video API, and <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> that synchronizes the video and transcript, and allows users to jump to specified parts of the video by clicking the transcript text. Additonally, the transcript is highlited as the matching section of the video plays. The video player is styled and customized with <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> and CSS</p> -->
+
+			</header>
+
+			<section class="video-section">
+
+				<div class="video-wrap">
+					<video style="width:100%;height:100%;" id ="my_video" class="mejs__player">
+						<source src="video_player_v3/video/video.mp4" type="video/mp4">
+						<source src="video_player_v3/video/video.ogg" type="video/ogg">
+					</video>
+				</div><!--/.video-wrap-->
+
+			</section>
+
+			<p>
+				<h4 class="caption-instruction">KLICKE AUF DEN TEXTABSCHNITT ZU DEM DU SPRINGEN WILLST</h4>
+			</p>
+			
+			<section class="caption-section" style="overflow-y:scroll; overflow-x:hidden; height:300px;">
+				
+				<p>
+					<h2><span data-start="5.500" data-end="13.960">Esszimmer&ensp;<img src="img/upload.svg"></span></h2>
+					<span data-start="6.500" data-end="7.500">Der Raum ist offen, wodurch sehr viel Wärme entweicht.</span>
+					<!-- <br> -->
+            		<span data-start="7.500" data-end="9.535">Hier wäre es vermutlich notwendig eine zusätzliche Wand einzuziehen.</span>
+					<br>
+    	    		<span data-start="9.535" data-end="11.270">Unter der Fensterbank bildet sich bereits Schimmel.</span>
+					<!-- <br> -->
+    	    		<span data-start="11.270" data-end="13.960">Die Eingangstür wird immer wieder geöffnet wodurch Wärme entweicht.</span> 
+        		</p>
+        		<p>
+					<h2><span data-start="24.700" data-end="36">Küche&ensp;<img src="img/upload.svg"></span></h2>
+            		<span data-start="25.700" data-end="27.5">Die Küche ist unbeheizt und Kälte tritt ein, da die Dichtung am Fenster fehlt.</span>
+		    	    <span data-start="28" data-end="30.5">Schimmel ist hinter den Geräten und Schränken erkennbar, vermutlich durch falsche Lüftung.</span>
+		        	<span data-start="31" data-end="33.5">Auch hier müssten die Fenster getauscht werden. Fenster wie im Esszimmer.</span>
+					<br>
+		        	<span data-start="34" data-end="36">Küche wird vom Bauherren selten genutzt.</span>
+        		</p>
+        		<p>
+					<h2><span data-start="43.5" data-end="53">Wohnzimmer&ensp;<img src="img/upload.svg"></span></h2>
+		        	<span data-start="44" data-end="46.300">Hier sieht man bei näherem hinsehen, die undichten Fenster, diese sollten aufjedenfall getauscht werden.</span>
+		        	<span data-start="46.300" data-end="47.270">Fenster ist 1-Glas verglast und mit einem Holzrahmen ausgestattet.</span>
+		        	<span data-start="47.270" data-end="48.760">Die Gummidichtung scheint porös und könnte für den Wärmeverlust verantwortlich sein.</span>
+		        	<span data-start="48.800" data-end="49.5">Desweiteren ist die Decke sehr hoch, wodurch das Aufheizen des Wohnzimmers, eine längere Zeit braucht.</span>
+		        	<span data-start="50" data-end="51.5">Hier entsteht der größte Verbrauch im Haus.</span>
+					<br>
+					<span data-start="52" data-end="53">Durch eine PV-Anlage könnte es kompensiert werden.</span>
+        		</p>
+
+			
+			</section>
+
+		</main>
+
+		<footer class="main-footer">
+			<p>&copy Sonderhofer 2022</p>
+		</footer>
+
+		<!-- <script>
+			$('video').mediaelementplayer({
+				features: ['playpause', 'tracks', 'progress', 'duration', 'volume', 'fullscreen'],
+  				startLanguage: 'en'
+			});
+		</script>
+	 -->
+
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelement-and-player.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+
+
+</html>
