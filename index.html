@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
+		<script>
+			var loadFile = function(event) {
+				var image = document.getElementById('output');
+				image.src = URL.createObjectURL(event.target.files[0]);
+			};
+
+			var loadFile2 = function(event2) {
+				var image2 = document.getElementById('output2');
+				image2.src = URL.createObjectURL(event2.target.files[0]);
+			};
+
+			var loadFile3 = function(event3) {
+				var image3 = document.getElementById('output3');
+				image3.src = URL.createObjectURL(event3.target.files[0]);
+			};		
+		</script>
 		<meta charset="utf-8">
 		<title>Interactive Video Player</title>
 		<link rel="icon" type="image/x-icon" href="/Users/johaensaen/Downloads/interactive-video-player-master/img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
@@ -10,19 +25,45 @@
 		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelementplayer.min.css">
 		<link rel="stylesheet" href="css/main.css">
+
+		<!-- <script>
+
+			var data = new FormData();
+			data.append('file', fileBLob); // This is file object
+
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.addEventListener("readystatechange", function () {
+				if (this.readyState === this.DONE) {
+					console.log(this.responseText);
+				}
+			});
+
+			xhr.open("POST", "https://app.nanonets.com/api/v2/ObjectDetection/Model/undefined/LabelFile/?async=false");
+			xhr.setRequestHeader("authorization", "Basic " + btoa("Rl9XfeaUm-TsBEJgn4bUoYW1SauQpo_c:"));
+
+			xhr.send(data);
+					
+		</script> -->
 	</head>
 
 	<body>
 
 		<main class="main-wrap">
 
-			<header class="main-header">
+			<!-- <header class="main-header">
 
 					<h1 class="name">Interactive Video Player</h1>
-					<!-- <p class="info">Interactive video player using JavaScript, the HTML5 Video API, and <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> that synchronizes the video and transcript, and allows users to jump to specified parts of the video by clicking the transcript text. Additonally, the transcript is highlited as the matching section of the video plays. The video player is styled and customized with <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> and CSS</p> -->
-					<button align="right" onclick="window.location.href = 'https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on';">Flow 2</button>
+				 	<p class="info">Interactive video player using JavaScript, the HTML5 Video API, and <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> that synchronizes the video and transcript, and allows users to jump to specified parts of the video by clicking the transcript text. Additonally, the transcript is highlited as the matching section of the video plays. The video player is styled and customized with <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> and CSS</p>
 
-			</header>
+			</header> -->
+
+			<a href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on"></a><img class="hintergrund" usemap="#workmap" src="/Users/johaensaen/Documents/Bachelor/Prototyp/interactive-video-player/img/Upload_interaktivesVideo.svg" width="100%"></a>
+
+			<map name="workmap">
+				<area shape="rect" coords="220,1,360,54" href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on" alt="Dashboard">
+			  </map>
 
 			<section class="video-section">
 
@@ -42,7 +83,7 @@
 			<section class="caption-section" style="overflow-y:scroll; overflow-x:hidden; height:300px;">
 				
 				<p>
-					<h2><span data-start="5.500" data-end="13.960">Esszimmer&ensp;<img src="img/upload.svg"></span></h2>
+					<h2><span data-start="5.500" data-end="13.960">Esszimmer&ensp;<input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output" width="40"/></span></h2>
 					<span data-start="6.500" data-end="7.500">Der Raum ist offen, wodurch sehr viel Wärme entweicht.</span>
 					<!-- <br> -->
             		<span data-start="7.500" data-end="9.535">Hier wäre es vermutlich notwendig eine zusätzliche Wand einzuziehen.</span>
@@ -52,7 +93,7 @@
     	    		<span data-start="11.270" data-end="13.960">Die Eingangstür wird immer wieder geöffnet wodurch Wärme entweicht.</span> 
         		</p>
         		<p>
-					<h2><span data-start="24.700" data-end="36">Küche&ensp;<img src="img/upload.svg"></span></h2>
+					<h2><span data-start="24.700" data-end="36">Küche&ensp;<input type="file"  accept="image2/*" name="image2" id="file"  onchange="loadFile2(event2)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output2" width="40"/></span></h2>
             		<span data-start="25.700" data-end="27.5">Die Küche ist unbeheizt und Kälte tritt ein, da die Dichtung am Fenster fehlt.</span>
 		    	    <span data-start="28" data-end="30.5">Schimmel ist hinter den Geräten und Schränken erkennbar, vermutlich durch falsche Lüftung.</span>
 		        	<span data-start="31" data-end="33.5">Auch hier müssten die Fenster getauscht werden. Fenster wie im Esszimmer.</span>
@@ -60,7 +101,7 @@
 		        	<span data-start="34" data-end="36">Küche wird vom Bauherren selten genutzt.</span>
         		</p>
         		<p>
-					<h2><span data-start="43.5" data-end="53">Wohnzimmer&ensp;<img src="img/upload.svg"></span></h2>
+					<h2><span data-start="43.5" data-end="53">Wohnzimmer&ensp;<input type="file"  accept="image3/*" name="image3" id="file"  onchange="loadFile3(event3)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output3" width="40"/></span></h2>
 		        	<span data-start="44" data-end="46.300">Hier sieht man bei näherem hinsehen, die undichten Fenster, diese sollten aufjedenfall getauscht werden.</span>
 		        	<span data-start="46.300" data-end="47.270">Fenster ist 1-Glas verglast und mit einem Holzrahmen ausgestattet.</span>
 		        	<span data-start="47.270" data-end="48.760">Die Gummidichtung scheint porös und könnte für den Wärmeverlust verantwortlich sein.</span>
@@ -74,10 +115,6 @@
 			</section>
 
 		</main>
-
-		<footer class="main-footer">
-			<p>&copy Sonderhofer 2022</p>
-		</footer>
 
 		<!-- <script>
 			$('video').mediaelementplayer({
