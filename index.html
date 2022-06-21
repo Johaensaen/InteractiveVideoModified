@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<script>
 			var loadFile = function(event) {
@@ -7,114 +8,246 @@
 				image.src = URL.createObjectURL(event.target.files[0]);
 			};
 
-			var loadFile2 = function(event2) {
+			var loadFile2 = function(event) {
 				var image2 = document.getElementById('output2');
-				image2.src = URL.createObjectURL(event2.target.files[0]);
+				image2.src = URL.createObjectURL(event.target.files[0]);
 			};
 
-			var loadFile3 = function(event3) {
+			var loadFile3 = function(event) {
 				var image3 = document.getElementById('output3');
-				image3.src = URL.createObjectURL(event3.target.files[0]);
+				image3.src = URL.createObjectURL(event.target.files[0]);
 			};		
+
+			$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+					  var src = $(this).attr('src');
+					  var modal;
+					
+					  function removeModal() {
+						modal.remove();
+						$('body').off('keyup.modal-close');
+					  }
+					  modal = $('<div>').css({
+						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+						backgroundSize: 'contain',
+						width: '100%',
+						height: '100%',
+						position: 'fixed',
+						zIndex: '10000',
+						top: '0',
+						left: '0',
+						cursor: 'zoom-out'
+					  }).click(function() {
+						removeModal();
+					  }).appendTo('body');
+					  //handling ESC
+					  $('body').on('keyup.modal-close', function(e) {
+						if (e.key === 'Escape') {
+						  removeModal();
+						}
+					  });
+					});
+
 		</script>
+
 		<meta charset="utf-8">
 		<title>Interactive Video Player</title>
-		<link rel="icon" type="image/x-icon" href="/Users/johaensaen/Downloads/interactive-video-player-master/img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
+		<link rel="icon" type="image/x-icon" href="img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/normalize.css">
 		
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelementplayer.min.css">
 		<link rel="stylesheet" href="css/main.css">
 
-		<!-- <script>
-
-			var data = new FormData();
-			data.append('file', fileBLob); // This is file object
-
-
-			var xhr = new XMLHttpRequest();
-
-			xhr.addEventListener("readystatechange", function () {
-				if (this.readyState === this.DONE) {
-					console.log(this.responseText);
-				}
-			});
-
-			xhr.open("POST", "https://app.nanonets.com/api/v2/ObjectDetection/Model/undefined/LabelFile/?async=false");
-			xhr.setRequestHeader("authorization", "Basic " + btoa("Rl9XfeaUm-TsBEJgn4bUoYW1SauQpo_c:"));
-
-			xhr.send(data);
-					
-		</script> -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	</head>
 
-	<body>
+	<body data-new-gr-c-s-check-loaded="9.58.0" data-gr-ext-installed="">
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<main class="main-wrap">
 
-			<!-- <header class="main-header">
-
-					<h1 class="name">Interactive Video Player</h1>
-				 	<p class="info">Interactive video player using JavaScript, the HTML5 Video API, and <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> that synchronizes the video and transcript, and allows users to jump to specified parts of the video by clicking the transcript text. Additonally, the transcript is highlited as the matching section of the video plays. The video player is styled and customized with <a href="http://www.mediaelementjs.com/" target="_blank">MediaElement.js</a> and CSS</p>
-
-			</header> -->
-
-			<a href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on"></a><img class="hintergrund" usemap="#workmap" src="img/Upload_interaktivesVideo.svg" width="100%"></a>
-
+			<!-- Verlinkung XD -->
 			<map name="workmap">
-				<area shape="rect" coords="220,1,360,54" href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on" alt="Dashboard">
-			  </map>
+				<area shape="rect" coords="200,1,380,54" href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on" alt="Dashboard">
+			</map>
+			<a href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on"></a><img class="hintergrund" usemap="#workmap" src="img/background.svg" width="100%"></a>
 
-			<section class="video-section">
-
-				<div class="video-wrap">
-					<video style="width:100%;height:100%;" id ="my_video" class="mejs__player">
-						<source src="video_player_v3/video/video.mp4" type="video/mp4">
-						<source src="video_player_v3/video/video.ogg" type="video/ogg">
-					</video>
-				</div><!--/.video-wrap-->
-
-			</section>
-
-			<p>
-				<h4 class="caption-instruction">KLICKE AUF DEN TEXTABSCHNITT ZU DEM DU SPRINGEN WILLST</h4>
-			</p>
 			
-			<section class="caption-section" style="overflow-y:scroll; overflow-x:hidden; height:300px;">
+			<h6 style="position: absolute; z-index: 4; left: 510px; margin-top: 240px;">KLICKE <b>LINKS</b> AUF DEN TEXTABSCHNITT ZU DEM DU SPRINGEN WILLST</h6>
+			
+			<!-- <div class="col"> -->
+				<section class="video-section">
+					
+
+					<div class="video-wrap">
+						<video style="width:100%;height:100%;" id ="my_video" class="mejs__player">
+							<source src="video_player_v3/video/test2.mp4" type="video/mp4">
+							<source src="video_player_v3/video/video.ogg" type="video/ogg">
+						</video>
+					<!-- </div>/.video-wrap -->
+				</section>
+			  <!-- </div> -->
+<!-- 
+			  style="overflow-y:scroll; overflow-x:hidden; height: 600px;" -->
+			<section class="caption-section">
 				
-				<p>
-					<h2><span data-start="5.500" data-end="13.960">Esszimmer&ensp;<input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output" width="40"/></span></h2>
-					<span data-start="6.500" data-end="7.500">Der Raum ist offen, wodurch sehr viel Wärme entweicht.</span>
-					<!-- <br> -->
-            		<span data-start="7.500" data-end="9.535">Hier wäre es vermutlich notwendig eine zusätzliche Wand einzuziehen.</span>
-					<br>
-    	    		<span data-start="9.535" data-end="11.270">Unter der Fensterbank bildet sich bereits Schimmel.</span>
-					<!-- <br> -->
-    	    		<span data-start="11.270" data-end="13.960">Die Eingangstür wird immer wieder geöffnet wodurch Wärme entweicht.</span> 
-        		</p>
-        		<p>
-					<h2><span data-start="24.700" data-end="36">Küche&ensp;<input type="file"  accept="image2/*" name="image2" id="file"  onchange="loadFile2(event2)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output2" width="40"/></span></h2>
-            		<span data-start="25.700" data-end="27.5">Die Küche ist unbeheizt und Kälte tritt ein, da die Dichtung am Fenster fehlt.</span>
-		    	    <span data-start="28" data-end="30.5">Schimmel ist hinter den Geräten und Schränken erkennbar, vermutlich durch falsche Lüftung.</span>
-		        	<span data-start="31" data-end="33.5">Auch hier müssten die Fenster getauscht werden. Fenster wie im Esszimmer.</span>
-					<br>
-		        	<span data-start="34" data-end="36">Küche wird vom Bauherren selten genutzt.</span>
-        		</p>
-        		<p>
-					<h2><span data-start="43.5" data-end="53">Wohnzimmer&ensp;<input type="file"  accept="image3/*" name="image3" id="file"  onchange="loadFile3(event3)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output3" width="40"/></span></h2>
-		        	<span data-start="44" data-end="46.300">Hier sieht man bei näherem hinsehen, die undichten Fenster, diese sollten aufjedenfall getauscht werden.</span>
-		        	<span data-start="46.300" data-end="47.270">Fenster ist 1-Glas verglast und mit einem Holzrahmen ausgestattet.</span>
-		        	<span data-start="47.270" data-end="48.760">Die Gummidichtung scheint porös und könnte für den Wärmeverlust verantwortlich sein.</span>
-		        	<span data-start="48.800" data-end="49.5">Desweiteren ist die Decke sehr hoch, wodurch das Aufheizen des Wohnzimmers, eine längere Zeit braucht.</span>
-		        	<span data-start="50" data-end="51.5">Hier entsteht der größte Verbrauch im Haus.</span>
-					<br>
-					<span data-start="52" data-end="53">Durch eine PV-Anlage könnte es kompensiert werden.</span>
-        		</p>
+				<!-- <div class="container">
+					<div class="row">
+					  <div class="col" style="overflow-y:scroll; overflow-x:hidden; height:500px;"> -->
+						
+						<p>
+							<h3><span data-start="2" data-end="39">Küche&ensp;<input type="file"  accept="image/*" name="image2" id="file"  onchange="loadFile(event)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output" width="40" data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable"/></span></h3>
+							<span data-start="3" data-end="6">So laufen jetzt in die Küche.</span>
+							<br>
+							<span data-start="6" data-end="10">Alexa, wir befinden uns jetzt in der Küche.</span>
+							<br>
+							<span data-start="10" data-end="14">Hier haben wir zwei Fenster.</span>
+							<br>
+							<span data-start="14" data-end="19">Man sieht hier schon, marode Kunststoffdichtung.</span>
+							<br>
+							<span data-start="19" data-end="22">Muss auf jeden Fall ausgetauscht werden.</span>
+							<br>
+							<span data-start="22" data-end="25">Wenn wir an dem Fenster schauen,</span>
+							<br>
+							<span data-start="25" data-end="28">selbes Problem, marode Dichtung.</span> 
+							<br>
+							<span data-start="28" data-end="31">Heizkörper Kontrolle</span> 
+							<br>
+							<span data-start="31" data-end="36">Okay, ja der Heizkörper ist ein bisschen kühl.</span>
+							<br>
+							<span data-start="36" data-end="39">Müsste man mal dran änder etwas.</span>
+						</p>
+						<script type="text/javascript">
+							$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+					  var src = $(this).attr('src');
+					  var modal;
+					
+					  function removeModal() {
+						modal.remove();
+						$('body').off('keyup.modal-close');
+					  }
+					  modal = $('<div>').css({
+						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+						backgroundSize: 'contain',
+						width: '100%',
+						height: '100%',
+						position: 'fixed',
+						zIndex: '10000',
+						top: '0',
+						left: '0',
+						cursor: 'zoom-out'
+					  }).click(function() {
+						removeModal();
+					  }).appendTo('body');
+					  //handling ESC
+					  $('body').on('keyup.modal-close', function(e) {
+						if (e.key === 'Escape') {
+						  removeModal();
+						}
+					  });
+					});
+						</script> 
 
+						<!-- <p>
+							<h3><span data-start="24.700" data-end="36">Esszimmer&ensp;<input type="file"  accept="image/*" name="image2" id="file2"  onchange="loadFile2(event)" style="display: none;"><label for="file2" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output2" width="40" data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable"/></span></h3>
+							<span data-start="24.700" data-end="30">Die Küche ist unbeheizt und </span>
+							<span data-start="17.940" data-end="22.370">If you live in a city or a town,
+							you probably have a coaxial cable for</span>
+							<span data-start="22.370" data-end="26.880">cable Internet, or a phone line if you
+							have DSL, running to the outside of</span>
+							<span data-start="26.880" data-end="30.920">your house, that connects you to
+							the Internet Service Provider, or ISP.</span>
+							<span data-start="32.100" data-end="34.730">If you live far out in the country,
+							you'll more likely have</span>
+							<span data-start="34.730" data-end="39.430">a dish outside your house, connecting
+							you wirelessly to your closest ISP, or</span>
+							<span data-start="39.430" data-end="41.190">you might also use the telephone system.</span>
+						</p>
+						<script type="text/javascript">
+							$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+					  var src = $(this).attr('src');
+					  var modal;
+					
+					  function removeModal() {
+						modal.remove();
+						$('body').off('keyup.modal-close');
+					  }
+					  modal = $('<div>').css({
+						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+						backgroundSize: 'contain',
+						width: '100%',
+						height: '100%',
+						position: 'fixed',
+						zIndex: '10000',
+						top: '0',
+						left: '0',
+						cursor: 'zoom-out'
+					  }).click(function() {
+						removeModal();
+					  }).appendTo('body');
+					  //handling ESC
+					  $('body').on('keyup.modal-close', function(e) {
+						if (e.key === 'Escape') {
+						  removeModal();
+						}
+					  });
+					});
+						</script> 
+
+						<p>
+							<h3><span data-start="43.5" data-end="53">Wohnzimmer&ensp;<input type="file"  accept="image/*" name="image3" id="file3"  onchange="loadFile3(event)" style="display: none;"><label for="file3" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output3" width="40" data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable"/></span></h3>
+							<span data-start="42.350" data-end="46.300">Hier sieht man bei näherem hinsehen, die undichten Fenster,diese sollten aufjedenfall getauscht werden.</span>
+							<span data-start="46.300" data-end="49.270">Fenster ist 1-Glas verglast und mit einem Holzrahmen ausgestattet.</span>
+							<span data-start="49.270" data-end="53.760">Die Gummidichtung scheint porös und könnte für den Wärmeverlust verantwortlich sein.</span>
+							<span data-start="53.760" data-end="57.780">Desweiteren ist die Decke sehr hoch, wodurch das Aufheizen des Wohnzimmers, eine längere Zeit braucht.</span>
+							<span data-start="57.780" data-end="60.150">Auch ist dies ein sehr lauter Raum.</span>
+						</p>
+						<script type="text/javascript">
+							$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+					  var src = $(this).attr('src');
+					  var modal;
+					
+					  function removeModal() {
+						modal.remove();
+						$('body').off('keyup.modal-close');
+					  }
+					  modal = $('<div>').css({
+						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+						backgroundSize: 'contain',
+						width: '100%',
+						height: '100%',
+						position: 'fixed',
+						zIndex: '10000',
+						top: '0',
+						left: '0',
+						cursor: 'zoom-out'
+					  }).click(function() {
+						removeModal();
+					  }).appendTo('body');
+					  //handling ESC
+					  $('body').on('keyup.modal-close', function(e) {
+						if (e.key === 'Escape') {
+						  removeModal();
+						}
+					  });
+					});
+						</script>  -->
+					</section>
+					<!-- </div> -->
+
+					
+
+					  
 			
-			</section>
-
+						
+					<!-- </div>
+					</div> -->
+					
 		</main>
+
+		<!-- <footer class="main-footer">
+			<p>&copy Sonderhofer 2022</p>
+		</footer> -->
 
 		<!-- <script>
 			$('video').mediaelementplayer({
