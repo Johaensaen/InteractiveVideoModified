@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Interactive Video Player</title>
+		<link rel="icon" type="image/x-icon" href="img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/normalize.css">
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelementplayer.min.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	</head>
+
+
+
+	<body data-new-gr-c-s-check-loaded="9.58.0" data-gr-ext-installed="">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<main class="main-wrap">
+
+			<!-- Verlinkung hinzufügen -->
+			<map name="workmap">
+				<area shape="rect" coords="160,100,180,130" href="index3.html" alt="Hinzufügen">
+				<area shape="rect" coords="200,1,380,54" href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on" alt="Übersicht">
+			</map>
+			<img class="hintergrund" usemap="#workmap" src="img/energieberater_dokumente.svg" width="100%"></a>
+			
+			<img id="timerimage" style="position: absolute; z-index: 5; left: 150px; margin-top: 130px; display:none;"  src="img/arrow.svg" height="48">
+			<script>
+				setTimeout(function(){
+					document.getElementById('timerimage').style.display = 'block';
+				},10000);
+			</script>
+					
+		</main>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelement-and-player.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+
+
+</html>
