@@ -1,111 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
+<head>
+	<script>
+		var loadFile = function (event) {
+			var image = document.getElementById('output');
+			image.src = URL.createObjectURL(event.target.files[0]);
+		};
+
+		var loadFile2 = function (event) {
+			var image2 = document.getElementById('output2');
+			image2.src = URL.createObjectURL(event.target.files[0]);
+		};
+
+		var loadFile3 = function (event) {
+			var image3 = document.getElementById('output3');
+			image3.src = URL.createObjectURL(event.target.files[0]);
+		};
+	</script>
+
+	<meta charset="utf-8">
+	<title>Interactive Video Player</title>
+	<link rel="icon" type="image/x-icon" href="img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelementplayer.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+
+
+<body data-new-gr-c-s-check-loaded="9.58.0" data-gr-ext-installed="">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<main class="main-wrap">
+
+		<!-- Verlinkung Dokumente -->
+		<map name="workmap">
+			<area shape="rect" coords="170,50,270,90" href="index2.html" alt="Dokumente">
+			<area shape="rect" coords="200,1,380,54"
+				href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on"
+				alt="Übersicht">
+		</map>
+		<img class="hintergrund" usemap="#workmap" src="img/background.svg" width="100%"></a>
+
+		<img id="timerimage" style="position: absolute; z-index: 5; left: 200px; margin-top: 90px; display:none;"
+			src="img/arrow.svg" height="48">
 		<script>
-			var loadFile = function(event) {
-				var image = document.getElementById('output');
-				image.src = URL.createObjectURL(event.target.files[0]);
-			};
-
-			var loadFile2 = function(event) {
-				var image2 = document.getElementById('output2');
-				image2.src = URL.createObjectURL(event.target.files[0]);
-			};
-
-			var loadFile3 = function(event) {
-				var image3 = document.getElementById('output3');
-				image3.src = URL.createObjectURL(event.target.files[0]);
-			};
+			setTimeout(function () {
+				document.getElementById('timerimage').style.display = 'block';
+			}, 10000);
 		</script>
 
-		<meta charset="utf-8">
-		<title>Interactive Video Player</title>
-		<link rel="icon" type="image/x-icon" href="img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/normalize.css">
-		
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelementplayer.min.css">
-		<link rel="stylesheet" href="css/main.css">
+		<h6 style="position: absolute; z-index: 4; left: 510px; margin-top: 240px;">KLICKE <b>LINKS</b> AUF DEN
+			TEXTABSCHNITT ZU DEM DU SPRINGEN WILLST</h6>
 
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	</head>
+		<!-- <div class="col"> -->
+		<section class="video-section">
 
 
+			<div class="video-wrap">
+				<video style="width:100%;height:100%;" id="my_video" class="mejs__player">
+					<source src="video_player_v3/video/robin_aufnahme.mp4" type="video/mp4">
+					<source src="video_player_v3/video/video.ogg" type="video/ogg">
+				</video>
+				<!-- </div>/.video-wrap -->
+		</section>
 
-	<body data-new-gr-c-s-check-loaded="9.58.0" data-gr-ext-installed="">
+		<section class="caption-section" style="overflow-y:scroll; overflow-x:hidden; height: 680px; width: auto;">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<main class="main-wrap">
+			<p>
+			<h3><span data-start="0.3" data-end="81">Heizraum&ensp;<input type="file" accept="image/*" name="image2"
+						id="file" onchange="loadFile(event)" style="display: none;"><label for="file"
+						style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output" width="40"
+						data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable" /></span></h3>
+			<span data-start="0.3" data-end="2.5">So damit wären wir jetzt auch schon im Heizraum.</span>
+			<br>
+			<span data-start="3" data-end="5">Hier sehen wir auch schon direkt die Gasheizung</span>
+			<br>
+			<span data-start="5" data-end="7">mit dem Warmwasserboiler daneben.</span>
+			<br>
+			<span data-start="7" data-end="8.5">Man erkennt schon von außen, dass es sich hier</span>
+			<br>
+			<span data-start="8.5" data-end="10.5">um ein eher älteres Modell handelt.</span>
+			<br>
+			<span data-start="10.5" data-end="12">Wissen Sie zufällig wie alt Ihre Heizung ist?</span>
+			<br>
+			<span data-start="13" data-end="14.5"><b>Puh, weiß ich nicht genau.</b></span>
+			<br>
+			<span data-start="15" data-end="16">Ok kein Problem, wir können auch gerne mal</span>
+			<br>
+			<span data-start="15.5" data-end="17">nachschauen. Bei Heizungen steht das nämlich</span>
+			<br>
+			<span data-start="17" data-end="21">immer nieder geschrieben. Ah ja. Datum</span>
+			<br>
+			<span data-start="21" data-end="25">Inbetriebnahme 14.12.93. Das bedeutet,</span>
+			<br>
+			<span data-start="25" data-end="28">dass Ihre Heizung 1993 das erste Mal</span>
+			<br>
+			<span data-start="28" data-end="30.5">installiert und in Betrieb genommen wurde.</span>
+			<br>
+			<span data-start="30.5" data-end="31.5">Heißt aber auf der anderen Seite auch,</span>
+			<br>
+			<span data-start="31.5" data-end="33">dass sie schon seit fast 30 Jahren läuft</span>
+			<br>
+			<span data-start="33" data-end="35">und dringend ausgewechselt gehört.</span>
+			<br>
+			<span data-start="36" data-end="37.5">Wissen Sie zufällig noch Ihren  Gasverbrauch</span>
+			<br>
+			<span data-start="37.5" data-end="40">vom letzten Jahr? <b>Nein leider nicht.</b></span>
+			<br>
+			<span data-start="40" data-end="41.5">Ok, kein Problem. Laden sie mir dazu einfach</span>
+			<br>
+			<span data-start="41.5" data-end="43">bitte die Heizkostenabrechnung hoch,</span>
+			<br>
+			<span data-start="43.5" data-end="47.5">dann schau ich es mir später an. Gut. Ja auch</span>
+			<br>
+			<span data-start="47.5" data-end="50">sehr interessant ist dieser Aufkleber hier oben.</span>
+			<br>
+			<span data-start="50" data-end="52.5">Das ist nämlich eine Energieeffizienzklassifizierung</span>
+			<br>
+			<span data-start="52.5" data-end="54.5">von ihrer Heizung und wie wir hier schön sehen</span>
+			<br>
+			<span data-start="54.5" data-end="56.5">können, liegt der aktuell bei der Stufe D,</span>
+			<br>
+			<span data-start="56.5" data-end="58">also ganz unten, was leider auch ein Indiz</span>
+			<br>
+			<!-- Ab hier fehlt noch passend zu video -->
+			<span data-start="58" data-end="61">dafür ist, dass ihre Heizung ziemlich</span>
+			<br>
+			<span data-start="61" data-end="63">verbraucherisch ist. Ich empfehle Ihnen deshalb,</span>
+			<br>
+			<span data-start="63" data-end="65">wirklich einen Umstieg auf ein neueres Modell,</span>
+			<br>
+			<span data-start="65" data-end="67">eventuell sogar mit einer anderen Energiequelle</span>
+			<br>
+			<span data-start="67" data-end="69.5">als Gas. Sie haben gemeint, Sie haben sich</span>
+			<br>
+			<span data-start="69.5" data-end="72">sowieso schon über Wärmepumpen informiert,</span>
+			<br>
+			<span data-start="72" data-end="73.5">ist das richtig? <b>Ja genau, richtig.</b></span>
+			<br>
+			<span data-start="73.5" data-end="76"><b>Ich hab gelesen, dass es sich lohnen soll.</b></span>
+			<br>
+			<span data-start="76" data-end="78">Ja das stimmt, Luft-Wasser-Wärmepumpen sind</span>
+			<br>
+			<span data-start="78" data-end="80">hier zu Lande sogar eine sehr beliebte Alternative</span>
+			<br>
+			<span data-start="80" data-end="81">zu Gas- oder Ölheizungen.</span>
 
-			<!-- Verlinkung Dokumente -->
-			<map name="workmap">
-				<area shape="rect" coords="170,50,270,90" href="index2.html" alt="Dokumente">
-				<area shape="rect" coords="200,1,380,54" href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on" alt="Übersicht">
-			</map>
-			<img class="hintergrund" usemap="#workmap" src="img/background.svg" width="100%"></a>
-			
-			<img id="timerimage" style="position: absolute; z-index: 5; left: 200px; margin-top: 90px; display:none;"  src="img/arrow.svg" height="48">
-			<script>
-				setTimeout(function(){
-					document.getElementById('timerimage').style.display = 'block';
-				},10000);
-			</script>
-			
-			<h6 style="position: absolute; z-index: 4; left: 510px; margin-top: 240px;">KLICKE <b>LINKS</b> AUF DEN TEXTABSCHNITT ZU DEM DU SPRINGEN WILLST</h6>
-			
-			<!-- <div class="col"> -->
-				<section class="video-section">
-					
+			</p>
+			<script type="text/javascript">
+				$('img[data-enlargeable]').addClass('img-enlargeable').click(function () {
+					var src = $(this).attr('src');
+					var modal;
 
-					<div class="video-wrap">
-						<video style="width:100%;height:100%;" id ="my_video" class="mejs__player">
-							<source src="video_player_v3/video/test2.mp4" type="video/mp4">
-							<source src="video_player_v3/video/video.ogg" type="video/ogg">
-						</video>
-					<!-- </div>/.video-wrap -->
-				</section>
-			  <!-- </div> -->
-<!-- 
-			  style="overflow-y:scroll; overflow-x:hidden; height: 600px;" -->
-			<section class="caption-section">
-				
-				<!-- <div class="container">
-					<div class="row">
-					  <div class="col" style="overflow-y:scroll; overflow-x:hidden; height:500px;"> -->
-						
-						<p>
-							<h3><span data-start="2" data-end="39">Küche&ensp;<input type="file"  accept="image/*" name="image2" id="file"  onchange="loadFile(event)" style="display: none;"><label for="file" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output" width="40" data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable"/></span></h3>
-							<span data-start="3" data-end="6">So laufen jetzt in die Küche.</span>
-							<br>
-							<span data-start="6" data-end="10">Alexa, wir befinden uns jetzt in der Küche.</span>
-							<br>
-							<span data-start="10" data-end="14">Hier haben wir zwei Fenster.</span>
-							<br>
-							<span data-start="14" data-end="19">Man sieht hier schon, marode Kunststoffdichtung.</span>
-							<br>
-							<span data-start="19" data-end="22">Muss auf jeden Fall ausgetauscht werden.</span>
-							<br>
-							<span data-start="22" data-end="25">Wenn wir an dem Fenster schauen,</span>
-							<br>
-							<span data-start="25" data-end="28">selbes Problem, marode Dichtung.</span> 
-							<br>
-							<span data-start="28" data-end="31">Heizkörper Kontrolle</span> 
-							<br>
-							<span data-start="31" data-end="36">Okay, ja der Heizkörper ist ein bisschen kühl.</span>
-							<br>
-							<span data-start="36" data-end="39">Müsste man mal dran änder etwas.</span>
-						</p>
-						<script type="text/javascript">
-							$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
-					  var src = $(this).attr('src');
-					  var modal;
-					
-					  function removeModal() {
+					function removeModal() {
 						modal.remove();
 						$('body').off('keyup.modal-close');
-					  }
-					  modal = $('<div>').css({
+					}
+					modal = $('<div>').css({
 						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
 						backgroundSize: 'contain',
 						width: '100%',
@@ -115,19 +173,19 @@
 						top: '0',
 						left: '0',
 						cursor: 'zoom-out'
-					  }).click(function() {
+					}).click(function () {
 						removeModal();
-					  }).appendTo('body');
-					  //handling ESC
-					  $('body').on('keyup.modal-close', function(e) {
+					}).appendTo('body');
+					//handling ESC
+					$('body').on('keyup.modal-close', function (e) {
 						if (e.key === 'Escape') {
-						  removeModal();
+							removeModal();
 						}
-					  });
 					});
-						</script> 
+				});
+			</script>
 
-						<!-- <p>
+			<!-- <p>
 							<h3><span data-start="24.700" data-end="36">Esszimmer&ensp;<input type="file"  accept="image/*" name="image2" id="file2"  onchange="loadFile2(event)" style="display: none;"><label for="file2" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output2" width="40" data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable"/></span></h3>
 							<span data-start="24.700" data-end="30">Die Küche ist unbeheizt und </span>
 							<span data-start="17.940" data-end="22.370">If you live in a city or a town,
@@ -211,24 +269,24 @@
 					  });
 					});
 						</script>  -->
-					</section>
-					<!-- </div> -->
+		</section>
+		<!-- </div> -->
 
-					
 
-					  
-			
-						
-					<!-- </div>
+
+
+
+
+		<!-- </div>
 					</div> -->
-					
-		</main>
 
-		<!-- <footer class="main-footer">
+	</main>
+
+	<!-- <footer class="main-footer">
 			<p>&copy Sonderhofer 2022</p>
 		</footer> -->
 
-		<!-- <script>
+	<!-- <script>
 			$('video').mediaelementplayer({
 				features: ['playpause', 'tracks', 'progress', 'duration', 'volume', 'fullscreen'],
   				startLanguage: 'en'
@@ -236,12 +294,12 @@
 		</script>
 	 -->
 
-		
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelement-and-player.min.js"></script>
-		<script src="js/app.js"></script>
-	</body>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelement-and-player.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
 
 
 </html>

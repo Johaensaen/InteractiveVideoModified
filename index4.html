@@ -2,38 +2,6 @@
 <html lang="en">
 
 	<head>
-		<base target="_top">
-  <script>
-  function LoadFile(event)
-  {
-    var file = event.target.files[0];
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      console.log(e.target.result);
-      var fileData = e.target.result.substr(e.target.result.indexOf(",")+1);
-      var mimeTypeStart = e.target.result.indexOf("data:") + 5;
-      var mimeTypeEnd = e.target.result.indexOf(";");
-      var mimeType = e.target.result.substr(mimeTypeStart, mimeTypeEnd - mimeTypeStart);
-      var fileName = file.name;
-      document.getElementById("fileData").value = fileData;
-      document.getElementById("mimeType").value = mimeType;
-      document.getElementById("fileName").value = fileName;
-    };    
-    reader.readAsDataURL(file);
-  }
-  </script>
-		
-		<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
-		<script type="text/javascript">
-			init = function() {
-				s = new gapi.drive.share.ShareClient();
-				s.setOAuthToken('<OAUTH_TOKEN>');
-				s.setItemIds(['<FILE_ID>']);
-			}
-			window.onload = function() {
-				gapi.load('drive-share', init);
-			}</script>
-
 		<meta charset="utf-8">
 		<title>Interactive Video Player</title>
 		<link rel="icon" type="image/x-icon" href="img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
@@ -48,60 +16,26 @@
 
 
 
-	<body data-new-gr-c-s-check-loaded="9.58.0" data-gr-ext-installed="">
+	<body data-new-gr-c-s-check-loaded="9.58.0" data-gr-ext-installed="" style="margin-top: 40px;">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<main class="main-wrap">
 
-			<!-- Verlinkung XD -->
+			<!-- Verlinkung Überblick XD Flow 2 -->
 			<map name="workmap">
 				<area shape="rect" coords="200,1,380,54" href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on" alt="Checklisten Erkennung">
 			</map>
-			<img class="hintergrund" usemap="#workmap" src="img/energieberater_dokumente_upload.svg" width="100%"></a>
+			<img class="hintergrund" usemap="#workmap" src="img/checklisten_erkennung.svg" width="100%"></a>
 			
-			<img id="timerimage" style="position: absolute; z-index: 5; left: 280px; margin-top: 36px; display:none;"  src="img/arrow.svg" height="48">
+			<!-- <img id="timerimage" style="position: absolute; z-index: 5; left: 280px; margin-top: 36px; display:none;"  src="img/arrow.svg" height="48">
 			<script>
 				setTimeout(function(){
 					document.getElementById('timerimage').style.display = 'block';
-				},10000);
+				},10000); -->
 			</script>
-
-    <h1>Web App File Loader</h1>
-    <?var url = getUrl();?>
-    <form method="post" action="<?= url ?>" >
-      <table cellpadding="5px">
-      <tr>
-      <td>Username:</td>
-      <td><input type="text" name="username" /></td>
-      </tr>
-      <tr>
-      <td>File:</td>
-      <td><input type="file" name="file" onchange="LoadFile(event)" />
-      <input type="hidden" id="fileData" name="fileData" />
-      <input type="hidden" id="mimeType" name="mimeType" />
-      <input type="hidden" id="fileName" name="fileName" /></td>
-      </tr>
-      <tr>
-      <td colspan="2"><input type="submit" value="Load File" /></td>
-      </tr>
-      <tr>
-      <td colspan="2"><span><?= message ?></span></td>      
-    </form>
-
-	<iframe src="https://drive.google.com/embeddedfolderview?id=17nxn6WP5kegcJaoIMS6daLRqT8Mj8HNE#list" style="width:100%; height:600px; border:0; position: absolute; z-index: 6;"></iframe>
-<!-- 
-			<iframe src="hhttps://drive.google.com/drive/folders/17nxn6WP5kegcJaoIMS6daLRqT8Mj8HNE?usp=sharing" style="border:none;" width="100%"></iframe> -->
-
-			<script src="https://apis.google.com/js/platform.js" async defer></script>
-			<div class="g-savetodrive"
-			data-src="//example.com/path/to/myfile.pdf"
-			data-filename="My Statement.pdf"
-			data-sitename="My Company Name">
-			</div>
-
-			<button onclick="s.showSettingsDialog()">Share</button>
-
-		</main>
+			<iframe src="https://script.google.com/macros/s/AKfycbxKKbY8mkcvIVNaeKSQvQ7HH0Nxp48UBC0sEigqhHoYIfpotMEe_WS_3ximV2prT-j84A/exec" style="border:none; margin-top: 160px; margin-left: 38px;" width="100%"></iframe>
+		
+			<iframe src="https://drive.google.com/embeddedfolderview?id=17nxn6WP5kegcJaoIMS6daLRqT8Mj8HNE#list" style="margin-top: 8px; margin-left: 38px; width: 25%; overflow-y:scroll; overflow-x:hidden; height: 600px;"></iframe>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelement-and-player.min.js"></script>

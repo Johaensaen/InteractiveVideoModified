@@ -14,7 +14,7 @@ body {
 	font: normal 1rem "Circular Std", Arial, Helvetica, sans-serif;
 	line-height: 1.5;
 	color: #070B2C;
-	background: #e2e2e2; 
+	background: #e2e2e2;
 }
 
 /* a {
@@ -76,7 +76,7 @@ LAYOUT CONTAINERS
 	max-width: 1100px;
 	/* margin: 0 auto 3em; */
 }
-	
+
 .caption-section {
 	width: 100%;
 	/* margin: 0 auto 2em; */
@@ -95,7 +95,8 @@ LAYOUT CONTAINERS
 	cursor: pointer;
 }
 
-.no-highlight { /* applied to have transition effect on JS highlight class */
+.no-highlight {
+	/* applied to have transition effect on JS highlight class */
 	transition: all 1.5s ease-in-out;
 }
 
