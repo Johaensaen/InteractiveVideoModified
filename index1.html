@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script>
+		var loadFile = function (event) {
+			var image = document.getElementById('output');
+			image.src = URL.createObjectURL(event.target.files[0]);
+		};
+
+		var loadFile2 = function (event) {
+			var image2 = document.getElementById('output2');
+			image2.src = URL.createObjectURL(event.target.files[0]);
+		};
+
+		var loadFile3 = function (event) {
+			var image3 = document.getElementById('output3');
+			image3.src = URL.createObjectURL(event.target.files[0]);
+		};
+	</script>
+
+	<meta charset="utf-8">
+	<title>Interactive Video Player</title>
+	<link rel="icon" type="image/x-icon" href="img/Bildschirmfoto 2022-06-03 um 14.22.30.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelementplayer.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+
+
+<body data-new-gr-c-s-check-loaded="9.58.0" data-gr-ext-installed="">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<main class="main-wrap">
+
+		<!-- Verlinkung Dokumente -->
+		<map name="workmap">
+			<area shape="rect" coords="170,50,270,90" href="index2.html" alt="Dokumente">
+			<area shape="rect" coords="200,1,380,54"
+				href="https://xd.adobe.com/view/b722e31c-d932-4cf6-940f-06737ef752ea-e271/?fullscreen&hints=on"
+				alt="Übersicht">
+		</map>
+		<img class="hintergrund" usemap="#workmap" src="img/Dashboard55.svg" width="100%"></a>
+
+		<!-- <img id="timerimage" style="position: absolute; z-index: 5; left: 200px; margin-top: 90px; display:none;"
+			src="img/arrow.svg" height="48">
+		<script>
+			setTimeout(function () {
+				document.getElementById('timerimage').style.display = 'block';
+			}, 10000);
+		</script> -->
+
+		<h6 style="position: absolute; z-index: 4; left: 510px; margin-top: 240px;">KLICKE <b>LINKS</b> AUF DEN
+			TEXTABSCHNITT ZU DEM DU SPRINGEN WILLST</h6>
+
+		<!-- <div class="col"> -->
+		<section class="video-section">
+
+
+			<div class="video-wrap">
+				<video style="width:100%;height:100%;" id="my_video" class="mejs__player">
+					<source src="video_player_v3/video/robin_aufnahme.mp4" type="video/mp4">
+					<source src="video_player_v3/video/video.ogg" type="video/ogg">
+				</video>
+				<!-- </div>/.video-wrap -->
+		</section>
+		
+		<section class="caption-section" style="overflow-y:scroll; overflow-x:hidden; height: 680px; width: auto;">
+
+			<p>
+			<h3><span data-start="0.3" data-end="81">Heizraum&ensp;<input type="file" accept="image/*" name="image2"
+						id="file" onchange="loadFile(event)" style="display: none;"><label for="file"
+						style="cursor: pointer;"><img src="img/upload.svg" width="30"></label>&ensp;<img id="output" width="40"
+						data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable" /></span></h3>
+			<span data-start="0.3" data-end="2.5">So damit wären wir jetzt auch schon im Heizraum.</span>
+			<br>
+			<span data-start="3" data-end="5">Hier sehen wir auch schon direkt die Gasheizung</span>
+			<br>
+			<span data-start="5" data-end="7">mit dem Warmwasserboiler daneben.</span>
+			<br>
+			<span data-start="7" data-end="8.5">Man erkennt schon von außen, dass es sich hier</span>
+			<br>
+			<span data-start="8.5" data-end="10.5">um ein eher älteres Modell handelt.</span>
+			<br>
+			<span data-start="10.5" data-end="12">Wissen Sie zufällig wie alt Ihre Heizung ist?</span>
+			<br>
+			<span data-start="13" data-end="14.5"><b>Puh, weiß ich nicht genau.</b></span>
+			<br>
+			<span data-start="15" data-end="16">Ok kein Problem, wir können auch gerne mal</span>
+			<br>
+			<span data-start="15.5" data-end="17">nachschauen. Bei Heizungen steht das nämlich</span>
+			<br>
+			<span data-start="17" data-end="21">immer nieder geschrieben. Ah ja. Datum</span>
+			<br>
+			<span data-start="21" data-end="25">Inbetriebnahme 14.12.93. Das bedeutet,</span>
+			<br>
+			<span data-start="25" data-end="28">dass Ihre Heizung 1993 das erste Mal</span>
+			<br>
+			<span data-start="28" data-end="30.5">installiert und in Betrieb genommen wurde.</span>
+			<br>
+			<span data-start="30.5" data-end="31.5">Heißt aber auf der anderen Seite auch,</span>
+			<br>
+			<span data-start="31.5" data-end="33">dass sie schon seit fast 30 Jahren läuft</span>
+			<br>
+			<span data-start="33" data-end="35">und dringend ausgewechselt gehört.</span>
+			<br>
+			<span data-start="36" data-end="37.5">Wissen Sie zufällig noch Ihren  Gasverbrauch</span>
+			<br>
+			<span data-start="37.5" data-end="40">vom letzten Jahr? <b>Nein leider nicht.</b></span>
+			<br>
+			<span data-start="40" data-end="41.5">Ok, kein Problem. Laden sie mir dazu einfach</span>
+			<br>
+			<span data-start="41.5" data-end="43">bitte die Heizkostenabrechnung hoch,</span>
+			<br>
+			<span data-start="43.5" data-end="47.5">dann schau ich es mir später an. Gut. Ja auch</span>
+			<br>
+			<span data-start="47.5" data-end="50">sehr interessant ist dieser Aufkleber hier oben.</span>
+			<br>
+			<span data-start="50" data-end="52.5">Das ist nämlich eine Energieeffizienzklassifizierung</span>
+			<br>
+			<span data-start="52.5" data-end="54.5">von ihrer Heizung und wie wir hier schön sehen</span>
+			<br>
+			<span data-start="54.5" data-end="57">können, liegt der aktuell bei der Stufe D,</span>
+			<br>
+			<span data-start="57" data-end="59">also ganz unten, was leider auch ein Indiz</span>
+			<br>
+			<span data-start="59" data-end="61">dafür ist, dass ihre Heizung ziemlich</span>
+			<br>
+			<span data-start="61" data-end="63">verbraucherisch ist. Ich empfehle Ihnen deshalb,</span>
+			<br>
+			<span data-start="63" data-end="65">wirklich einen Umstieg auf ein neueres Modell,</span>
+			<br>
+			<span data-start="65" data-end="67">eventuell sogar mit einer anderen Energiequelle</span>
+			<br>
+			<span data-start="67" data-end="69.5">als Gas. Sie haben gemeint, Sie haben sich</span>
+			<br>
+			<span data-start="69.5" data-end="72">sowieso schon über Wärmepumpen informiert,</span>
+			<br>
+			<span data-start="72" data-end="73.5">ist das richtig? <b>Ja genau, richtig.</b></span>
+			<br>
+			<span data-start="73.5" data-end="76"><b>Ich hab gelesen, dass es sich lohnen soll.</b></span>
+			<br>
+			<span data-start="76" data-end="78">Ja das stimmt, Luft-Wasser-Wärmepumpen sind</span>
+			<br>
+			<span data-start="78" data-end="80">hier zu Lande sogar eine sehr beliebte Alternative</span>
+			<br>
+			<span data-start="80" data-end="81">zu Gas- oder Ölheizungen.</span>
+
+			</p>
+			<script type="text/javascript">
+				$('img[data-enlargeable]').addClass('img-enlargeable').click(function () {
+					var src = $(this).attr('src');
+					var modal;
+
+					function removeModal() {
+						modal.remove();
+						$('body').off('keyup.modal-close');
+					}
+					modal = $('<div>').css({
+						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+						backgroundSize: 'contain',
+						width: '100%',
+						height: '100%',
+						position: 'fixed',
+						zIndex: '10000',
+						top: '0',
+						left: '0',
+						cursor: 'zoom-out'
+					}).click(function () {
+						removeModal();
+					}).appendTo('body');
+					//handling ESC
+					$('body').on('keyup.modal-close', function (e) {
+						if (e.key === 'Escape') {
+							removeModal();
+						}
+					});
+				});
+			</script>
+
+			<!-- <p>
+							<h3><span data-start="24.700" data-end="36">Esszimmer&ensp;<input type="file"  accept="image/*" name="image2" id="file2"  onchange="loadFile2(event)" style="display: none;"><label for="file2" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output2" width="40" data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable"/></span></h3>
+							<span data-start="24.700" data-end="30">Die Küche ist unbeheizt und </span>
+							<span data-start="17.940" data-end="22.370">If you live in a city or a town,
+							you probably have a coaxial cable for</span>
+							<span data-start="22.370" data-end="26.880">cable Internet, or a phone line if you
+							have DSL, running to the outside of</span>
+							<span data-start="26.880" data-end="30.920">your house, that connects you to
+							the Internet Service Provider, or ISP.</span>
+							<span data-start="32.100" data-end="34.730">If you live far out in the country,
+							you'll more likely have</span>
+							<span data-start="34.730" data-end="39.430">a dish outside your house, connecting
+							you wirelessly to your closest ISP, or</span>
+							<span data-start="39.430" data-end="41.190">you might also use the telephone system.</span>
+						</p>
+						<script type="text/javascript">
+							$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+					  var src = $(this).attr('src');
+					  var modal;
+					
+					  function removeModal() {
+						modal.remove();
+						$('body').off('keyup.modal-close');
+					  }
+					  modal = $('<div>').css({
+						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+						backgroundSize: 'contain',
+						width: '100%',
+						height: '100%',
+						position: 'fixed',
+						zIndex: '10000',
+						top: '0',
+						left: '0',
+						cursor: 'zoom-out'
+					  }).click(function() {
+						removeModal();
+					  }).appendTo('body');
+					  //handling ESC
+					  $('body').on('keyup.modal-close', function(e) {
+						if (e.key === 'Escape') {
+						  removeModal();
+						}
+					  });
+					});
+						</script> 
+
+						<p>
+							<h3><span data-start="43.5" data-end="53">Wohnzimmer&ensp;<input type="file"  accept="image/*" name="image3" id="file3"  onchange="loadFile3(event)" style="display: none;"><label for="file3" style="cursor: pointer;"><img src="img/upload.svg"></label>&ensp;<img id="output3" width="40" data-enlargeable="" style="cursor: zoom-in" class="img-enlargeable"/></span></h3>
+							<span data-start="42.350" data-end="46.300">Hier sieht man bei näherem hinsehen, die undichten Fenster,diese sollten aufjedenfall getauscht werden.</span>
+							<span data-start="46.300" data-end="49.270">Fenster ist 1-Glas verglast und mit einem Holzrahmen ausgestattet.</span>
+							<span data-start="49.270" data-end="53.760">Die Gummidichtung scheint porös und könnte für den Wärmeverlust verantwortlich sein.</span>
+							<span data-start="53.760" data-end="57.780">Desweiteren ist die Decke sehr hoch, wodurch das Aufheizen des Wohnzimmers, eine längere Zeit braucht.</span>
+							<span data-start="57.780" data-end="60.150">Auch ist dies ein sehr lauter Raum.</span>
+						</p>
+						<script type="text/javascript">
+							$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+					  var src = $(this).attr('src');
+					  var modal;
+					
+					  function removeModal() {
+						modal.remove();
+						$('body').off('keyup.modal-close');
+					  }
+					  modal = $('<div>').css({
+						background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+						backgroundSize: 'contain',
+						width: '100%',
+						height: '100%',
+						position: 'fixed',
+						zIndex: '10000',
+						top: '0',
+						left: '0',
+						cursor: 'zoom-out'
+					  }).click(function() {
+						removeModal();
+					  }).appendTo('body');
+					  //handling ESC
+					  $('body').on('keyup.modal-close', function(e) {
+						if (e.key === 'Escape') {
+						  removeModal();
+						}
+					  });
+					});
+						</script>  -->
+		</section>
+
+	</main>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/mediaelement/4.1.0/mediaelement-and-player.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+
+</html>
